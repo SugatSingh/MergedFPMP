@@ -1,0 +1,121 @@
+<!--/dashboard/users : This is UI for admin to add and manage users-->
+<app-dashboard></app-dashboard>
+<div class="content">
+<div class="card">
+    <h5 class="card-header main">Users</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <div class="input-group">
+            <input class="form-control" type="search" id="searchdata">
+            <div class="input-group-append">
+              <button class="main btn btn-secondary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <span class="float-right">
+             <!--<button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Import User</button>&nbsp;&nbsp;&nbsp;-->
+            <button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Add User</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary">Download List</button>
+        </span>
+        </div>
+      </div>
+        <br><br><hr>
+        <table class="table table-bordered table-hover table-responsive-lg" style="width: 100%;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Institute</th>
+                <th scope="col">Department</th>
+                <th scope="col">Links</th>
+                <th scope="col"  style="width: 16%;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                <td>Mark Otto</td>
+                <td>markotto@mail.com</td>
+                <td>Texas, America</td>
+                <td>Electronics and Computer Engineering</td>
+                <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+                <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+                <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+                <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-warning" title="Edit User" data-toggle="modal" data-target="#addUserModal"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                <td>Mark Otto</td>
+                <td>markotto@mail.com</td>
+                <td>California, America</td>
+                <td>Electronics and Computer Engineering</td>
+                <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+                <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+                <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+                <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-warning" title="Edit User" data-toggle="modal" data-target="#addUserModal"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                <td>Mark Otto</td>
+                <td>markotto@mail.com</td>
+                <td>New York, America</td>
+                <td>Electronics and Computer Engineering</td>
+                <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+                <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+                <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+                <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-warning" title="Edit User"  data-toggle="modal" data-target="#addUserModal"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog madal-dialog-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Add User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #newuserform = "ngForm">
+                <div class="form-group">
+                    <label for="InputFName">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="InputLName">Last Name</label>
+                    <input type="text" class="form-control" id="Lname" name="lname" placeholder="Last Name" ngModel>
+                  </div>
+                <div class="form-group">
+                  <label for="InputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="Email" name="email" placeholder="Email Address" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">Department</label>
+                    <select class="form-control" name="department" ngModel>
+                        <option *ngFor="let department of departments" [ngValue]="department">{{department}}</option>
+                    </select>
+                  </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary main" (click)="onSubmituser(newuserform)" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

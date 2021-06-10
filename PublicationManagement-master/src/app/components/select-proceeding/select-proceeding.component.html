@@ -1,0 +1,32 @@
+<div class="container card">
+    <h5 class="card-header main text-center">New Conference Article</h5>
+    <br>
+    <div class="card-body">
+      <br>
+      <h5>Select Proceeding</h5>
+      <hr>
+      <form>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="Proceeding name" aria-label="Number" [value]="" matInput
+            [formControl]="proceedingForm" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredList" [value]="option.proceeding_title">
+              {{option.proceeding_title}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="form-group">
+          <label for="pages">Pages</label>
+          <input type="text" class="form-control" id="pages" name="pages" placeholder="Page"
+            [(ngModel)]="specificInput.pages">
+        </div>
+
+
+        <div class="float-right">
+          <!-- <a class="btn btn-secondary main" [routerLink]="['../newproceeding']" [queryParams]="type">Add New Proceeding</a>&nbsp;&nbsp;&nbsp; -->
+          <a class="btn btn-secondary main" (click)="onNext()">Next</a>
+        </div>
+      </form>
+    </div>
+  </div>

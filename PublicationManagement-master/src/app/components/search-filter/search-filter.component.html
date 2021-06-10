@@ -1,0 +1,72 @@
+<div class="container">
+  <h5 class="text-center" style="padding-top: 10px; border-bottom: 1px;"><br>Filter Options</h5>
+  <hr>
+  <form #journalForm="ngForm">
+    <br>
+    <!--<form #optiontwo="ngForm">
+      <br>
+      <div class="form-group">
+        <div class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown">Department</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item">Electronics And Computer</a>
+              <a class="dropdown-item">Civil</a>
+              <a class="dropdown-item">Mechanical</a>
+              <a class="dropdown-item">Electrical</a>
+          </div>
+      </div>
+      </div>
+    </form>-->
+    <div class="form-group">
+      <label>Department</label>
+      <select class="form-control" name="department" ngModel>
+        <option *ngFor="let department of departmentList" [value]="department.department_name">{{department.department_name}}</option>
+      </select>
+
+    </div>
+    <div class="form-group">
+      <label>Journal Citation</label>
+      <select class="form-control" name="select_journal" ngModel>
+        <option *ngFor="let journal of journalList" [value]="journal.journal_name">{{journal.journal_name}}</option>
+      </select>
+
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="year" placeholder="Year" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="volume" placeholder="Volume" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="issue" placeholder="Issue" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="page" placeholder="Page" ngModel>
+    </div>
+    <button class="btn main btn-secondary" (click)="updateJournal(journalForm)">Update</button>
+  </form>
+  <form #dateForm="ngForm">
+      <br>
+      <div class="form-group">
+          <label>From</label>
+          <input class="form-control" type="date" name="start" id="start">
+          <br>
+          <label>To</label>
+          <input class="form-control" type="date" name="to" id="to">
+      </div>
+    <button class="btn main btn-secondary" (click)="updateDate(dateFrom)">Update</button>
+
+
+  </form>
+  <form #optiontwo="ngForm">
+    <br>
+    <div class="form-group">
+      <label>Type</label><br>
+      <input type="checkbox" name="journal" #journal="ngModel" (click)="update_journal(journal)"
+        ngModel>&nbsp;Article<br>
+      <input type="checkbox" name="journalarticle" #journalarticle="ngModel"
+        (click)="update_journalarticle(journalarticle)" ngModel>&nbsp; Research Article<br>
+      <input type="checkbox" name="image" #image="ngModel" (click)="update_image(image)" ngModel>&nbsp;Book Chapter<br>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="container card">
+    <h5 class="card-header main text-center">New Conference Article</h5>
+    <br>
+    <div class="card-body">
+      <br>
+      <h5>Select Conference</h5>
+      <hr>
+      <form>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="conference name" aria-label="Number" [value]="" matInput
+            [formControl]="conferenceForm" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredList" [value]="option.conference_name">
+              {{option.conference_name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="form-group">
+          <label for="impact_factor">Impact Factor</label>
+          <input type="text" class="form-control" id="impact_factor" name="impact_factor" placeholder="Impact Factor"
+            [(ngModel)]="specificInput.impact_factor">
+        </div>
+
+        <div class="float-right">
+          <a class="btn btn-secondary main" [routerLink]="['../newconference']" [queryParams]="type">Add New Conference</a>&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-secondary main" (click)="onNext()">Next</a>
+        </div>
+      </form>
+    </div>
+  </div>

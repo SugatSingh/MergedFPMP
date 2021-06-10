@@ -1,0 +1,119 @@
+<app-dashboard></app-dashboard>
+
+<div class="content row">
+  <div class="col-8">
+    <table class="table table-bordered table-hover table-responsive-lg" style="width: 100%;">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Institute</th>
+          <th scope="col">Department</th>
+          <th scope="col">Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid"
+              style="width: 50px"></th>
+          <td>Mark Otto</td>
+          <td>markotto@mail.com</td>
+          <td>Texas, America</td>
+          <td>Electronics and Computer Engineering</td>
+          <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+            <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+            <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+
+        </tr>
+        <tr>
+          <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid"
+              style="width: 50px"></th>
+          <td>Mark Otto</td>
+          <td>markotto@mail.com</td>
+          <td>California, America</td>
+          <td>Electronics and Computer Engineering</td>
+          <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+            <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+            <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+        </tr>
+        <tr>
+          <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid"
+              style="width: 50px"></th>
+          <td>Mark Otto</td>
+          <td>markotto@mail.com</td>
+          <td>New York, America</td>
+          <td>Electronics and Computer Engineering</td>
+          <td><i class="fa fa-google"></i>: <a href="">123</a><br>
+            <i class="fa fa-twitter"></i>: <a href="">456</a><br>
+            <i class="fa fa-linkedin"></i>: <a href="">789</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Right Side-->
+  <div class="col-4">
+    <br><br>
+    <button class="main btn btn-secondary btn-block" data-toggle="modal" data-target="#editUserModal">Edit
+      Details</button>
+    <br>
+    <div class="container-fluid">
+      <h4 class="text-center"><br><br>Department Publications</h4>
+      <p class="text-center">Total Publications: 50</p>
+      <em class="aux">Journal Article: 10 <br>Conference Article: 12 <br> Proceedings: 3 <br>
+        Report: 12 <br> Book: 8
+      </em>
+      <!--<ul class="chart">
+          <li>
+            <span style="height:10%" title="Journal Article" class="first"></span>
+          </li>
+          <li>
+            <span style="height:40%" title="Conference Article"></span>
+          </li>
+          <li>
+            <span style="height:15%" title="Report"></span>
+          </li>
+          <li>
+            <span style="height:15%" title="Proceedings"></span>
+          </li>
+          <li>
+            <span style="height:20%" title="Book"></span>
+          </li>
+        </ul>-->
+      <!--Bar Graph-->
+      <div class="graph-container">
+        <div class="graph">
+          <div class="title"></div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">30</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">40</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">55</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">70</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">25</div>
+          </div>
+          <div class="vlabels_container">
+            <div class="vlabel">{{height1}}</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+          </div>
+          <div class="hlabel">C.A</div>
+          <div class="hlabel">J.A</div>
+          <div class="hlabel">B</div>
+          <div class="hlabel">R</div>
+          <div class="hlabel">P</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

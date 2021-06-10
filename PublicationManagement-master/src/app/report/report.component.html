@@ -1,0 +1,137 @@
+<!--/dashboard/article : This is UI for logged in users to add and manage conference articles they have written-->
+<app-dashboard></app-dashboard>
+<div class="content">
+<div class="card">
+  <h5 class="card-header main">Report</h5>
+  <div class="card-body">
+    <div class="row">
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <div class="input-group">
+            <input class="form-control" type="search" id="searchdata">
+            <div class="input-group-append">
+              <button class="main btn btn-secondary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <span class="float-right">
+            <button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Import Report</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Add Report</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary">Download List</button>
+        </span>
+        </div>
+      </div>
+      <br><br><hr>
+      <table class="table table-bordered table-hover table-responsive-lg" style="width: 100%;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Publication Date</th>
+              <th scope="col">DOI</th>
+              <th scope="col">Journal Name</th>
+              <th scope="col">Page</th>
+              <th scope="col">Authors</th>
+              <th scope="col" style="width: 16%;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark Otto</td>
+              <td>markotto</td>
+              <td>Texas</td>
+              <td><a href="">Electronic</a></td>
+              <td>123</td>
+              <td>Apple<br>
+                Banana<br>
+                Citrus</td>
+              <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-warning" title="Edit User"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark Otto</td>
+              <td>markotto</td>
+              <td>Texas</td>
+              <td><a href="">Electronic</a></td>
+              <td>123</td>
+              <td>Apple<br>
+                Banana<br>
+                Citrus</td>
+              <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-warning" title="Edit User"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark Otto</td>
+              <td>markotto</td>
+              <td>Texas</td>
+              <td><a href="">Electronic</a></td>
+              <td>123</td>
+              <td>Apple<br>
+                Banana<br>
+                Citrus</td>
+              <td><button class="btn btn-secondary main" title="Change Password"><i class="bx bx-reset"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-warning" title="Edit User"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+                  <button class="btn btn-danger" title="Delete User"><i class="bx bx-trash"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog madal-dialog-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Add User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-group">
+                  <label for="InputFName">First Name</label>
+                  <input type="text" class="form-control" id="fname" aria-describedby="emailHelp" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <label for="InputLName">Last Name</label>
+                  <input type="text" class="form-control" id="Lname" aria-describedby="emailHelp" placeholder="Last Name">
+                </div>
+              <div class="form-group">
+                <label for="InputEmail1">Email address</label>
+                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email Address">
+              </div>
+              <div class="form-group">
+                  <label for="InputPassword1">Department</label>
+                  <select class="form-control">
+                      <option>Department of Electronics and Computer Engineering</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">Google ID</label>
+                    <input type="text" class="form-control" id="googleID" aria-describedby="emailHelp" placeholder="Google ID">
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">LinkedIn ID</label>
+                    <input type="text" class="form-control" id="googleID" aria-describedby="emailHelp" placeholder="LinkedIn ID">
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">Twitter ID</label>
+                    <input type="text" class="form-control" id="googleID" aria-describedby="emailHelp" placeholder="Twitter ID">
+                </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary main">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

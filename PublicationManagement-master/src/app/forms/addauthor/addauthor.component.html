@@ -1,0 +1,47 @@
+<!--ADD AUTHOR MODAL-->
+<div class="card">
+  <h5 class="card-header main text-center">New Journal Article</h5>
+  <br>
+  <div class="card-body">
+    <h5>Select Author</h5>
+    <hr>
+    <form>
+      <mat-form-field class="full-width">
+        <input type="text" placeholder="Search author name" aria-label="Text" matInput [formControl]="authorForm"
+          [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredList" [value]="option.first_name + ' ' + option.last_name">
+            {{option.first_name}} {{option.last_name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="container">
+        <div class="float-right">
+          <a class="btn btn-secondary main" [routerLink]="['../newauthor']" [queryParams]="{next: 'author'}"
+            routerLinkActive="router-link-active">Add New Author</a>&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-secondary main" (click)="selectAuthor()">Select Author</a>
+        </div>
+      </div>
+      <br>
+      <br><br>
+
+    </form>
+    <div class="container" *ngFor="let author of authors; index as i">
+      <h6>Author {{i+1}}: </h6>
+      <div class="row">
+        <div class="col-xl-4" style="margin-bottom: 12px;">
+          <div class="form-control " readonly>{{author.first_name}} {{author.last_name}}</div>
+        </div>
+        <div class="float-right"><button class="btn-danger btn" (click)="removeAuthor(i)"><i class="bx bx-x-circle"></i></button></div>
+        <div class="col-xl-4">
+          <div>Secondary Author: <mat-slide-toggle [(ngModel)]="author.secondary_author"></mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-secondary main" (click)="onNext()">Next</button>
+    </div>
+  </div>
+</div>

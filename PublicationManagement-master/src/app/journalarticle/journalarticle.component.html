@@ -1,0 +1,82 @@
+<!--/dashboard/article : This is UI for logged in users to add and manage conference articles they have written-->
+<!-- <app-small-nav></app-small-nav> -->
+<app-dashboard></app-dashboard>
+<div class="content">
+  <div class="card">
+    <h5 class="card-header main">Journal Articles</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xl-5" style="padding-top: 10px;">
+              <app-search-bar></app-search-bar>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <span class="float-right">
+            <button class="btn main btn-secondary" data-toggle="modal" data-target="#importArticle">Import
+              Article</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary" [routerLink]="['/new/publisher']"
+              [queryParams]="{type: 'journal_article'}">Add Article</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary" (click)="download()">Download List</button>
+          </span>
+        </div>
+      </div>
+      <br><br>
+      <hr>
+
+      <mat-tab-group>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span [matBadge]="journalArticles?.length">Journal Article<span class="pd-5"></span> </span>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="container">
+              Journal Articles
+              <div class="card" *ngFor="let result of journalArticles">
+                <div class="row">
+                  <div class="col-8">
+                    <app-journal-article-list-item [journalArticle]="result"></app-journal-article-list-item>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-2 pd-50 mt-100">
+                    <button (click)="delete(result.publication_id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+
+  <!--IMPORT-->
+  <div class="modal fade" id="importArticle" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog madal-dialog-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Import</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #jourarticleBibTex="ngForm">
+            <div class="form-group">
+              <label for="title">BibTeX</label>
+              <textarea class="form-control" id="ArticleBib" name="bibtex" placeholder="BibTeX" ngModel></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary main" data-toggle="modal" data-target="#addArticle"
+            data-dismiss="modal" (click)="onSubmitBibtex(jourarticleBibTex)">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

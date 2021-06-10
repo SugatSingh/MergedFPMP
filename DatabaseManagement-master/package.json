@@ -1,0 +1,34 @@
+{
+  "name": "databasemanagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon source/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrest4647/DatabaseManagement.git"
+  },
+  "author": "Sunil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shrest4647/DatabaseManagement/issues"
+  },
+  "homepage": "https://github.com/Shrest4647/DatabaseManagement#readme",
+  "dependencies": {
+    "async": "^3.2.0",
+    "bcryptjs": "^2.4.3",
+    "biblatex-csl-converter": "^1.9.5",
+    "bibtex": "^0.9.0",
+    "bibtex-parse-js": "0.0.24",
+    "body-parser": "^1.19.0",
+    "citation-js": "^0.5.0-alpha.9",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6"
+  }
+}

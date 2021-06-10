@@ -1,0 +1,32 @@
+<!--ADD NEW JOURNAL-->
+<div class="card">
+    <h5 class="card-header main text-center">New Proceeding</h5>
+    <br>
+<div class="card-body">
+      <h5>New Conference Details</h5>
+    <hr>
+    <div class="form-group">
+        <form #newConference="ngForm">
+                <div class="form-group">
+                    <label for="title">Conference Name</label>
+                    <input type="text" class="form-control" name="conference_name" placeholder="Conference Name" required ngModel>
+                  </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="address" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="year">Organised In</label>
+                    <input type="date" name="organised_date" id="organised_date" class="form-control" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="issue">Issue</label>
+                    <input type="text" class="form-control" name="issue" placeholder="Issue" ngModel>
+                </div>
+        </form>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-secondary main"  (click)="onSubmit(newConference)">Next</button>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,128 @@
+<!--/dashboard/article : This is UI for logged in users to add and manage conference articles they have written-->
+<!-- <app-small-nav></app-small-nav> -->
+<app-dashboard></app-dashboard>
+<div class="content">
+<div class="card">
+  <h5 class="card-header main">Book Chapter</h5>
+  <div class="card-body">
+    <div class="row">
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <div class="input-group">
+            <input class="form-control" type="search" id="searchdata">
+            <div class="input-group-append">
+              <button class="main btn btn-secondary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-5" style="padding-top: 10px;">
+          <span class="float-right">
+            <button class="btn main btn-secondary" data-toggle="modal" data-target="#importBook">Import Book</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary" [routerLink]="['/new/publisher']" [queryParams]="{type: 'book_chapter'}" routerLinkActive="router-link-active" >Add Book Chapter</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn main btn-secondary">Download List</button>
+        </span>
+        </div>
+      </div>
+      <br><br><hr>
+      <mat-tab-group>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span [matBadge]="bookChapters?.length"> Book Chapters</span>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="container">
+              Book Chapters
+              <div class="card" *ngFor="let result of bookChapters">
+                <div class="row">
+                  <div class="col-8">
+                    <app-book-chapter-list-item [bookChapter]="result"></app-book-chapter-list-item>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-2 pd-50 mt-100">
+                    <button (click)="delete(result.publication_id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>
+
+<div class="modal fade" id="addBookChapter" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog madal-dialog-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Add Book Chapter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form #newbookform="ngForm">
+              <div class="form-group">
+                  <label for="bookdetail">Book Title</label>
+                  <input type="text" class="form-control" id="booktitle" name="booktitle" placeholder="Book Title" ngModel>
+                </div>
+                <div class="form-group">
+                  <label for="bookdetail">Volume</label>
+                  <input type="number" class="form-control" id="volume" name="vol" placeholder="Volume" min="0" step="1" ngModel>
+                </div>
+              <div class="form-group">
+                <label for="bookdetail">Edition</label>
+                <input type="number" class="form-control" id="edition" name="edition" placeholder="Edition" min="0" step="1" ngModel>
+              </div>
+                <div class="form-group">
+                    <label for="bookdetail">ISBN</label>
+                    <input type="text" class="form-control" id="ISBN" name="ISBN" placeholder="ISBN" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="bookdetail">Chapter</label>
+                    <input type="number" class="form-control" id="chapno" name="chapno" placeholder="Chapter Number" min="0" step="1" ngModel>
+                </div>
+                <div class="form-group">
+                  <label for="bookdetail">Chapter Title</label>
+                  <input type="text" class="form-control" id="chaptitle" name="chaptitle" placeholder="Chapter Title" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="bookdetail">Chapter's Page Number</label>
+                <input type="text" class="form-control" id="chappage" name="chappage" placeholder="Chapter's Starting Page Number"  min="0" step="1" ngModel>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary main" data-dismiss="modal" (click)="onSubmitnewbook(newbookform)">Finish</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="importBook" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog madal-dialog-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Import</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form #bookBibTex = "ngForm">
+              <div class="form-group">
+                  <label for="title">BibTeX</label>
+                  <textarea class="form-control" id="ArticleBib" name="bibtex" placeholder="BibTeX" ngModel></textarea>
+                </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary main" data-dismiss="modal" data-target="#addBookChapter" data-toggle="modal" (click)="onSubmitbibtex(bookBibTex)">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <form>
+    <div class="input-group-lg input-group">
+      <input type="text" class="form-control" placeholder="Search with keyword..." aria-label="keywords"
+        aria-describedby="search keyword" name="search" [(ngModel)]="searchBarText" #searchBar="ngModel" required>
+      <div class="input-group-append">
+        <button class="input-group-text main btn-secondary" id="basic-addon1" (click)="onSearch()"
+          [disabled]="!searchBarText">
+          <i class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+      </div>
+    </div>
+  </form>
+</div>

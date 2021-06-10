@@ -1,0 +1,16 @@
+<!--/login : This is login interface-->
+<app-header></app-header>
+<br><br><br><br>
+<div class="row">
+<div class="col-xl-4"></div>
+<div class="card col-xl-4">
+    <div class="card-body">
+        <h5 class="text-center primary">Login</h5><hr>
+        <input type="text" class="form-control form-group" placeholder="E-mail Address" [(ngModel)]="user_email" name="email">
+        <input type="password" class="form-control form-group" placeholder="Password" [(ngModel)]="password" name="password">
+        <button class="btn btn-secondary main btn-block" (click)="login()"><i class="fa fa-user"></i> Log In</button>
+        <a href="/">Forgot Password</a>
+</div>
+<div class="col-xl-4"></div>
+</div>
+</div>

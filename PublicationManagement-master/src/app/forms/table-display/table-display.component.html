@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="col-xl-12" style="padding-bottom:10px;">
+      <h4 style="padding-top: 10px;">
+        <a class="text-dark"  href="{{journalArticle.link}}">
+          {{journalArticle.title}}
+        </a>
+        <div class="status"></div>
+      </h4>
+      <hr>
+      <div class="row">
+      <div class="col-xl-10">
+      <div *ngIf="authors?.length>0">
+      Authors:
+      <span class="text-primary" *ngFor="let author of authors; last as isLast">
+        <em>{{author.first_name}} {{author.last_name}} <span *ngIf="!isLast">,</span></em>
+      </span>
+      </div>
+      <div *ngIf="journal?.journal_name">
+        <strong>Journal Name: </strong> {{journal.journal_name}}
+      </div>
+      <div *ngIf="publisher?.publisher_name">
+        <strong>Publication Name: </strong> {{publisher.publisher_name}}
+      </div>
+      <div *ngIf="journalArticle?.DOI">
+        <strong>DOI</strong>: {{journalArticle.DOI}}
+      </div>
+      <div *ngIf="journalArticle?.publication_date">
+        <strong>Published</strong>: {{journalArticle.publication_date| date}}
+      </div>
+      <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true" *ngIf="journalArticle?.abstract">
+  
+          <div role="tab" id="headingOne1">
+            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="false"
+              aria-controls="collapseOne1">
+              <p class="mb-0 text-secondary">
+               <strong>Abstract</strong> 
+          </p>
+            </a>
+          </div>
+          <!-- Card body -->
+          <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+            data-parent="#accordionEx">
+            <div class="card-body">
+              {{ journalArticle.abstract}}
+            </div>
+          </div>
+      </div>
+        </div>
+          <div class="col-xl-2">
+          <button class="btn btn-warning" title="Edit Journal Article" data-toggle="modal"><i class="bx bx-pencil"></i></button>&nbsp;&nbsp;
+        <button class="btn btn-danger" title="Delete Journal Article"><i class="bx bx-trash"></i></button>
+        </div>
+    </div>
+
+</div>
+</div>
+      
+  

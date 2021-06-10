@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <form class="form-group">
+
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="float-right">
+                <h6 style="padding-top: 15px;"><strong class="primary">Advanced? &nbsp;</strong>
+                <label class="switch">
+                  <input type="checkbox" (click)="drop_options()">
+                  <span class="slider round"></span>
+                </label></h6>
+              </div>
+            </li>
+            <li class="list-group-item animated" *ngIf="advanced">
+              <div class="row">
+                <div class="col-xl-2">
+                  <h6><strong class="primary">Type &nbsp;</strong></h6>
+                </div>
+                <div class="form-select col-xl-4">
+                  <select name="type" id="select" (change)="updateSearchCriteria()" class="form-control" [(ngModel)]= "search_criteria.publication_type">
+                    <option *ngFor="let option of select_options" [value]="option.value">{{option.display}}</option>
+                  </select>
+                </div>
+                <div class="col-xl-1"></div>
+                  <div class="col-xl-1"><label for="limit">
+                    <strong class="primary">Limit</strong> </label>
+                  </div>
+                  
+                  <div class="col-xl-3">
+                    <input class="form-control" type="number" name="limit" (change)="updateSearchCriteria()" [(ngModel)]="search_criteria.limit">
+                  </div>
+                </div>
+            </li>
+            <li class="list-group-item"  *ngIf="advanced">
+              <div class="row">
+                <div class="col-xl-2" style="padding-top: 8px;">
+                  <strong class="primary">Date Issued &nbsp;</strong>
+                </div>
+                <div class="col-xl-1" style="padding-top: 8px;">
+                  <strong class="primary">From:</strong>
+                </div>
+                <div class="col-xl-3">
+                  <input class="form-control" (change)="updateSearchCriteria()" placeholder="DateFrom" type="date" name="date_from" [(ngModel)]="search_criteria.date_from">
+                </div>
+                <div class="col-xl-1"></div>
+                <div class="col-xl-1" style="padding-top: 8px;">
+                  <strong class="primary">To:</strong>
+                </div>
+                <div class="col-xl-3">
+                  <input class="form-control" (change)="updateSearchCriteria()" placeholder="DateTo" type="date" name="date_until" [(ngModel)]="search_criteria.date_until">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </form>
+</div>

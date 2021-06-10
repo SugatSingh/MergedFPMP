@@ -1,0 +1,80 @@
+<div class="jumbotron jumbotron-fluid"
+  style="background-image: url(./assets/images/pencil.jpg); background-repeat: no-repeat; background-position: center; background-size: unset;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="section-title text-light font-weight-bold" style="text-transform: capitalize;">
+          {{journalArticle?.title}}
+        </h2>
+        <p class="text-warning" style="text-transform: capitalize;"> {{journalArticle?.publication_type.toUpperCase()}}
+        </p>
+        <p class="text-white font-italic"> {{journalArticle?.publication_date| date}}</p>
+      </div>
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" placeholder="Search Items" class="form-control">
+            <button class="btn btn-secondary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="container">
+  <div class="card">
+    <h3 class="card-title">Authors</h3>
+    <div class="card-body" *ngFor="let author of authors">
+      <div class="author-list">
+        {{author?.last_name}} {{author?.first_name}},
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <blockquote>
+    <ul></ul>
+  </blockquote>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="featureImage">
+        <img class="featured-image img-fluid" src="assets/images/pencil.jpg">
+      </div>
+    </div>
+    <div flex class="col-md-6">
+      <blockquote style="flex-direction: column-reverse;">
+        <p class="font-weight-bold">Editor: <span class="text-info font-italic text-capitalize">Sunil Shrestha</span>
+        </p>
+        <p class="font-weight-bold">Publication: <span
+            class="text-info font-italic text-capitalize">{{publisher?.publisher_name}}</span></p>
+        <p class="font-weight-bold">Volume: <span class="text-info font-italic text-capitalize">III</span></p>
+        <p class="font-weight-bold">ISSN: <span class="text-info font-italic text-capitalize">ISSN No</span></p>
+        <p class="font-weight-bold">Date of Creation: <span
+            class="text-info font-italic text-capitalize">{{journalArticle?.publication_date| date}}</span></p>
+        <p class="font-weight-bold">URL: <span class="text-info font-italic"><a>{{journalArticle?.link}}</a></span></p>
+
+      </blockquote>
+      <p class="font-16">Abstract: <span class="text-secondary">{{journalArticle?.abstract}}</span></p>
+    </div>
+  </div>
+  <!-- {{apa}} -->
+  <div class="container">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>APA</ng-template>
+        <ng-template matTabContent> {{apa}}
+        Hello guys</ng-template>
+      </mat-tab>
+      <mat-tab >
+        <ng-template mat-tab-label>Bibtex</ng-template>
+        <ng-template matTabContent>{{bibtex}}</ng-template>
+      </mat-tab>
+      <mat-tab >
+        <ng-template mat-tab-label>Vancouver</ng-template>
+        <ng-template matTabContent> {{vancouver}}></ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+</div>

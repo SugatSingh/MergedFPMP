@@ -1,0 +1,217 @@
+<!--/dashboard : This is UI for admin/users to get a report of there contents and edit them-->
+<app-dashboard></app-dashboard>
+<div class="content">
+  <div class="row">
+    <div class="col-xl-8" style="border-right-style: solid;">
+
+      <div class="row">
+        <div class="col-xl-2">
+          <div class="profile-pic" style="background-image: url('assets/images/user-default.png')" >
+            <label for="inputImage" title="Upload image file">
+              <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+              <span class="docs-tooltip" data-toggle="tooltip" title="Import image">
+                <i class="fa fa-camera" style="font-size: 40px;"></i>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-9">
+          <br>
+          <h5 class="primary">Aman Shakya</h5>
+          <em>amanshakya@mail.com</em>
+          <h6 class="primary">Department of Computer Engineering</h6>
+          <h6>Kathmandu, Nepal</h6>
+          <i class="fa fa-google"></i>: <a href="">aman.shakya</a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-twitter"></i>: <a href="">amanShakya</a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fa fa-linkedin"></i>: <a href="">shayka.aman123</a>
+        </div>  
+      </div>
+
+
+      <br><hr><br>
+
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search with keyword..." aria-label="keywords" aria-describedby="search keyword">
+        <div class="input-group-append">
+          <button class="input-group-text main btn-secondary" id="basic-addon1" routerLink="/searchresult"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+        </div>
+      </div><br>
+      <div class="card">
+        <h5 class="card-header main">Result</h5>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-5" style="padding-top: 0px;">
+            </div>
+            <div class="col-xl-2"></div>
+            <div class="col-xl-5" style="padding-top: 0px;">
+              <span class="float-right">
+                 <!--<button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Import User</button>&nbsp;&nbsp;&nbsp;-->
+                <!--<button class="btn main btn-secondary" data-toggle="modal" data-target="#addUserModal">Add User</button>&nbsp;&nbsp;&nbsp;-->
+                <button class="btn main btn-secondary">Download List</button>
+            </span>
+            </div>
+          </div>
+            <hr>
+            <table class="table table-bordered table-hover table-responsive" style="width: 100%;">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Department</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                    <td>Mark Otto</td>
+                    <td>markotto@mail.com</td>
+                    <td>Texas, America</td>
+                    <td>Electronics and Computer Engineering</td>
+        
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                    <td>Mark Otto</td>
+                    <td>markotto@mail.com</td>
+                    <td>California, America</td>
+                    <td>Electronics and Computer Engineering</td>
+                
+                  </tr>
+                  <tr>
+                    <th scope="row">1&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/images/user-default.png" class="img-fluid" style="width: 50px"></th>
+                    <td>Mark Otto</td>
+                    <td>markotto@mail.com</td>
+                    <td>New York, America</td>
+                    <td>Electronics and Computer Engineering</td>
+                  
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+    
+    </div>
+    
+
+    <!--Right Side-->
+    <div class="col-xl-4">
+      <br><br>
+      <!-- <button class="main btn btn-secondary btn-block" data-toggle="modal" data-target="#editUserModal">Edit Details</button> -->
+      <br>
+      <div class="container-fluid">
+        <h4 class="text-center"><br><br>Your Publications</h4>
+        <p class="text-center">Total Publications: 50</p>
+        <em class="aux">Journal Article: 10 <br>Conference Article: 12 <br> Proceedings: 3 <br>
+          Report: 12 <br> Book: 8
+        </em>
+      <!--<ul class="chart">
+        <li>
+          <span style="height:10%" title="Journal Article" class="first"></span>
+        </li>
+        <li>
+          <span style="height:40%" title="Conference Article"></span>
+        </li>
+        <li>
+          <span style="height:15%" title="Report"></span>
+        </li>
+        <li>
+          <span style="height:15%" title="Proceedings"></span>
+        </li>
+        <li>
+          <span style="height:20%" title="Book"></span>
+        </li>
+      </ul>-->
+      <!--Bar Graph-->
+      <div class="graph-container">
+        <div class="graph">
+          <div class="title"></div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">30</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">40</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">55</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">70</div>
+          </div>
+          <div class="bar" [ngStyle]="{'height.px':height1}">
+            <div class="val_label">25</div>
+          </div>
+          <div class="vlabels_container">
+            <div class="vlabel">{{height1}}</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+            <div class="vlabel">-</div>
+          </div>
+          <div class="hlabel">C.A</div>
+          <div class="hlabel">J.A</div>
+          <div class="hlabel">B</div>
+          <div class="hlabel">R</div>
+          <div class="hlabel">P</div>
+        </div> 
+    </div> 
+    </div>
+  </div>
+  
+  </div>
+
+  <!-- <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog madal-dialog-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Add User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #newuserform = "ngForm">
+                <div class="form-group">
+                    <label for="InputFName">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="InputLName">Last Name</label>
+                    <input type="text" class="form-control" id="Lname" name="lname" placeholder="Last Name" ngModel>
+                  </div>
+                <div class="form-group">
+                  <label for="InputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="Email" name="email" placeholder="Email Address" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">Department</label>
+                    <select class="form-control">
+                        <option *ngFor="let department of departments" [(ngValue)]="deaprtment">{{department}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="InputPassword1">Google ID</label>
+                      <input type="text" class="form-control" id="googleID" name="googleid" placeholder="Google ID" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="InputPassword1">LinkedIn ID</label>
+                      <input type="text" class="form-control" id="googleID" name="linkedinid" placeholder="LinkedIn ID" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="InputPassword1">Twitter ID</label>
+                      <input type="text" class="form-control" id="googleID" name="twitterid" placeholder="Twitter ID" ngModel>
+                  </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary main" (click)="onSubmituser(newuserform)" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div> -->

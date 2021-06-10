@@ -1,0 +1,61 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-md-3 card">
+      <app-search-filter></app-search-filter>
+    </div>
+    <div class="container col-sm-8 col-md-9">
+      <br>
+      <app-search-bar></app-search-bar>
+      <br>
+      <h3>Showing the results for "{{post_search_text}}"</h3>
+      <br>
+
+      <mat-tab-group>
+        <mat-tab *ngIf="journalArticles?.length > 0">
+          <ng-template mat-tab-label>
+            <span [matBadge]="journalArticles?.length">Journal Article__<span class="pd-5"></span> </span>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="container">
+              Journal Articles
+              <div class="card" *ngFor="let result of journalArticles">
+                <app-journal-article-list-item [journalArticle]="result"></app-journal-article-list-item>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab *ngIf="conferenceArticles.length">
+          <ng-template mat-tab-label>
+            <span [matBadge]="conferenceArticles?.length">Conference Article__</span>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="container">
+              Conference Articles
+              <div class="card" *ngFor="let result of conferenceArticles">
+                <app-conference-article-list-item [conferenceArticle]="result"></app-conference-article-list-item>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+        <mat-tab *ngIf="bookChapters.length">
+          <ng-template mat-tab-label>
+            <span [matBadge]="bookChapters?.length"> Book Chapters</span>
+          </ng-template>
+          <ng-template matTabContent>
+            <div class="container">
+              Book Chapters
+              <div class="card" *ngFor="let result of bookChapters">
+                <app-book-chapter-list-item [bookChapter]="result"></app-book-chapter-list-item>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+
+      <br><br>
+
+    </div>
+
+  </div>
+</section>

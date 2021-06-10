@@ -1,0 +1,53 @@
+<div class="container mt-10" style="border-top: 1px solid;">
+  <div class="row">
+    <div class="col-10"></div>
+    <div class="col-2">
+      <span class="mt-0 badge badge-secondary"> {{conferenceArticle.publication_type.toUpperCase()}}</span>
+    </div>
+  </div>
+  <div>
+    <h4>
+      <a class="text-dark" [routerLink]="['/conferencearticle', conferenceArticle.publication_id]"
+        routerLinkActive="router-link-active">
+        {{conferenceArticle.title}}
+      </a>
+      <div class="status"></div>
+    </h4>
+    <hr>
+    <div class="pdf-link ml-10" *ngIf="conferenceArticle?.link != ''">
+      <strong> PDF: </strong>
+      <a href="{{conferenceArticle.link}}">{{conferenceArticle.link}}</a>
+    </div>
+    <span class="text-primary" *ngFor="let author of authors; last as isLast">
+      <small>{{author.last_name}}, {{author.first_name}} <span *ngIf="!isLast"> and </span></small>
+    </span>
+    <div class="conference-description" *ngIf="publisher?.publisher_name">
+      <strong>In</strong> {{publisher.publisher_name}}
+    </div>
+    <div class="doi" *ngIf="conferenceArticle?.DOI">
+      DOI: {{conferenceArticle.DOI}}
+    </div>
+    <div class="published-date" *ngIf="conferenceArticle?.publication_date">
+      <strong>Published</strong>: {{conferenceArticle.publication_date| date}}
+    </div>
+    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+      <div role="tab" id="headingOne1">
+        <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="false"
+          aria-controls="collapseOne1">
+          <p class="mb-0 text-secondary">
+            <strong>Abstract</strong>
+          </p>
+        </a>
+      </div>
+
+      <!-- Card body -->
+      <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+        data-parent="#accordionEx">
+        <div class="card-body">
+          {{ conferenceArticle.abstract}}
+
+        </div>
+      </div>
+
+    </div>

@@ -1,0 +1,36 @@
+<!--<div class="container-fluid">-->
+  <!-- The sidebar -->
+  <div class="sidebar">
+    <div class="main" routerLink="/home">
+      <h3 class="text-center" style="color: #fefefe"><br><img src="assets/images/tu-logo.png" class="img-fluid"
+          style="height:100px"><br>Faculty Publication Portal</h3>
+      <div><br></div>
+    </div>
+    <a routerLink="/dashboard"><i class="fa fa-home" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Profile</strong></a>
+    <a routerLink="/dashboard/conferencearticle"><i class="bx bx-news" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Conference Article</strong></a>
+    <a routerLink="/dashboard/book"><i class="fa fa-book" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Book</strong></a>
+    <a routerLink="/dashboard/journalarticle"><i class="bx bx-note" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Journal Article</strong></a>
+    <a routerLink="/dashboard/proceeding"><i class="bx bx-notepad" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Proceeding</strong></a>
+    <a *ngIf="isAdmin" routerLink="/dashboard/users"><i class="bx bxs-user" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Users</strong></a>
+  </div>
+  <div class="row container-fluid">
+    <div class="col-xl-4"></div>
+    <div class="col-xl-6"></div>
+    <div class="col-xl-2">
+      <div class="float-right">
+        <button class="btn btn-link" routerLink="/dashboard"
+          style="font-size: 15px; margin-bottom: 30px;">UserName</button>
+        <i class='bx bxs-user-circle'
+          style="font-size: 50px; margin-bottom:0px; margin-top:10px; margin-right: 0px;"></i>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+
+<!--</div>-->

@@ -1,0 +1,31 @@
+<div class="card">
+    <h5 class="card-header main text-center">New Journal Article</h5>
+    <br>
+    <div class="card-body">
+      <br>
+      <h5>Select Journal</h5>
+      <hr>
+      <form>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="journal name" aria-label="Number" [value]="" matInput
+            [formControl]="journalForm" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredList" [value]="option.journal_name">
+              {{option.journal_name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="form-group">
+          <label for="pages">Pages</label>
+          <input type="text" class="form-control" id="pages" name="pages" placeholder="Page"
+            [(ngModel)]="specificInput.pages">
+        </div>
+
+        <div class="float-right">
+          <a class="btn btn-secondary main" [routerLink]="['../newjournal']" [queryParams]="type">Add New Journal</a>&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-secondary main" (click)="onNext()">Next</a>
+        </div>
+      </form>
+    </div>
+  </div>

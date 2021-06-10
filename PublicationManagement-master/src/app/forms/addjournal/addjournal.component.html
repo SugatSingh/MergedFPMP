@@ -1,0 +1,33 @@
+<!--ADD NEW JOURNAL-->
+    <div class="card">
+        <h5 class="card-header main text-center">New Journal Article</h5>
+        <br>
+    <div class="card-body">
+          <h5>New Journal Details</h5>
+        <hr>
+        <div class="form-group">
+            <form #newjournal="ngForm">
+                    <div class="form-group">
+                        <label for="title">Journal Name</label>
+                        <input type="text" class="form-control" name="journal_name" placeholder="Journal Name" required ngModel>
+                      </div>
+                    <div class="form-group">
+                      <label for="issn">ISSN</label>
+                      <input type="text" class="form-control" id="issn"name="issn" placeholder="ISSN" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="issue">Issue</label>
+                        <input type="text" class="form-control" name="issue" placeholder="Issue" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="peer_reviewed" ngModel>&nbsp;
+                        <label for="pages">Peer Reviewed</label>
+                      </div>
+            </form>
+        </div>
+        <div class="float-right">
+          <button type="button" class="btn btn-secondary main"  (click)="onSubmitnewjournal(newjournal)">Next</button>
+        </div>
+      </div>
+      </div>
+  

@@ -1,0 +1,489 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+.main{
+    background-color: #2b2e4a;
+    color: #fefefe;
+}
+.primary{
+    color: #2b2e4a;
+}
+
+.secondary{
+    color: #e84545;
+}
+
+a.aux{
+    color:#903749;
+}
+
+.aux2{
+    color: #53354a
+}
+a.aux:hover{
+  color: #53354a;
+}
+
+/*toggler bar*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 53px;
+    height: 25px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2b2e4a;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2b2e4a;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+.slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/*dashboard-sidenav*/
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: #efefef;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  box-shadow: darkgray;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: #2b2e4a;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  color: #2b2e5a;
+  /*color: white;*/
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: gray;
+  ;
+  /*color: white;*/
+}
+
+.fixtop{
+  margin-left: 300px;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 305px;
+  padding: 10px 16px;
+  height: 100%;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    margin-top: 55px;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+  .fixtop{
+    margin-left: 0px;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  .fixtop{
+    margin-left: 0px;
+  }
+}
+
+/*Profile Picture Change*/
+.profile-pic {
+  border-radius: 0%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: transparent;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-pic:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  color: #fafafa;
+  transition: all .3s ease;
+}
+.profile-pic span {
+  display: inline-flex;
+  padding: .2em;
+}
+
+.full-width {
+  width : 100%
+};
+
+/*Bar Graph*/
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 700px;
+  height: 200px;
+  margin: 0 auto;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
+  background-size: 100% 50px;
+  background-position: left top;
+}
+.chart li {
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 200px;
+}
+.chart span{
+  margin: 0 5px;
+  display: block;
+  background:#414db8;
+  animation: draw 1s ease-in-out;
+}
+.chart span:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 5px 5px 0;
+  display: block;
+  text-align: center;
+  content: attr(title);
+  word-wrap: break-word;
+}
+
+
+@keyframes draw {
+  0% {
+    height: 0;
+  }
+}
+/**/
+.graph-container {
+  height: 300px;
+  width: 100%;
+  
+  font-family: sans-serif;
+}
+
+.graph {
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid gainsboro;
+  position: relative;
+  left: 20px;
+  top: 50px;
+}
+
+.title {
+  position: absolute;
+  font-size: 15px;
+  width: 50%;
+  text-align: center;
+  top: -40px;
+}
+
+.hlabel, .val_label {
+  position: relative;
+  width: 45px;
+  text-align: center;
+  font-size: 8pt;
+  color: #323232;
+}
+
+.vlabel {
+  position: absolute;
+  left: -30px;
+  text-align: center;
+  font-size: 8pt;
+  color: #323232;
+}
+
+.hlabel {
+  top: 205px;
+  float: left;
+  width: 45px;
+  margin-left: 15px;
+  text-align: center;
+}
+
+.val_label {
+  top: -20px;
+}
+
+@keyframes grow1 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(2) .hlabel {
+  top: 40px;
+}
+
+.bar:nth-child(2) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background-color: tomato;
+  width: 45px;
+  animation-name: grow1;
+  animation-duration: 2s;
+}
+
+@keyframes grow2 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(3) .hlabel {
+  top: 60px;
+}
+
+.bar:nth-child(3) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  background-color: gold;
+  width: 45px;
+  animation-name: grow2;
+  animation-duration: 2s;
+}
+
+@keyframes grow3 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(4) .hlabel {
+  top: 100px;
+}
+
+.bar:nth-child(4) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 130px;
+  background-color: lightseagreen;
+  width: 45px;
+  animation-name: grow3;
+  animation-duration: 2s;
+}
+
+@keyframes grow4 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(5) .hlabel {
+  top: 140px;
+}
+
+.bar:nth-child(5) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 190px;
+  background-color: lightgreen;
+  width: 45px;
+  animation-name: grow4;
+  animation-duration: 2s;
+}
+
+@keyframes grow5 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(6) .hlabel {
+  top: 40px;
+}
+
+.bar:nth-child(6) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  background-color: peachpuff;
+  width: 45px;
+  animation-name: grow5;
+  animation-duration: 2s;
+}
+
+@keyframes grow6 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(7) .hlabel {
+  top: 120px;
+}
+
+.bar:nth-child(7) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 310px;
+  background-color: lightsteelblue;
+  width: 45px;
+  animation-name: grow6;
+  animation-duration: 2s;
+}
+
+@keyframes grow7 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(8) .hlabel {
+  top: 140px;
+}
+
+.bar:nth-child(8) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 370px;
+  background-color: seagreen;
+  width: 45px;
+  animation-name: grow7;
+  animation-duration: 2s;
+}
+
+@keyframes grow8 {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar:nth-child(9) .hlabel {
+  top: 80px;
+}
+
+.bar:nth-child(9) {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 430px;
+  background-color: #e6e6e6;
+  width: 45px;
+  animation-name: grow8;
+  animation-duration: 2s;
+}
+
+.vlabel:nth-child(1) {
+  bottom: -5px;
+}
+
+.vlabel:nth-child(2) {
+  bottom: 35px;
+}
+
+.vlabel:nth-child(3) {
+  bottom: 75px;
+}
+
+.vlabel:nth-child(4) {
+  bottom: 115px;
+}
+
+.vlabel:nth-child(5) {
+  bottom: 155px;
+}
+
+.vlabel:nth-child(6) {
+  bottom: 195px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,41 @@
+<div class="conatiner">
+  <div class="wrap">
+
+    <div class="box one">
+      <a [routerLink]="['/new/publisher']" [queryParams]="{type: 'journal_article'}" routerLinkActive="router-link-active" >
+        <h1>Journal Article</h1>
+      </a>
+      <div class="poster p1">
+        <h4>J</h4>
+      </div>
+    </div>
+
+    <div class="box two">
+        <a [routerLink]="['/new/publisher']" [queryParams]="{type: 'conference_article'}" routerLinkActive="router-link-active" >
+            <h1>Conference Article</h1>
+          </a>
+
+      <div class="poster p2">
+        <h4>C</h4>
+      </div>
+    </div>
+
+    <div class="box three">
+        <a [routerLink]="['/new/publisher']" [queryParams]="{type: 'proceeding'}" routerLinkActive="router-link-active" >
+            <h1>Proceeding</h1>
+          </a>
+      <div class="poster p3">
+        <h4>P</h4>
+      </div>
+    </div>
+
+    <div class="box five">
+        <a [routerLink]="['/new/publisher']" [queryParams]="{type: 'book_chapter'}" routerLinkActive="router-link-active" >
+            <h1>Book Chapter</h1>
+          </a>
+      <div class="poster p4">
+        <h4>B</h4>
+      </div>
+    </div>
+  </div>
+</div>

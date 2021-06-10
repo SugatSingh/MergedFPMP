@@ -1,0 +1,38 @@
+<div>
+  <div class="card">
+    <h5 class="card-header main text-center">New Book Chapter</h5>
+    <br>
+    <div class="card-body">
+      <br>
+      <h5>Now Let's Choose the Book</h5>
+      <hr>
+      <form>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="Book Name" aria-label="Number" matInput [formControl]="bookForm"
+            [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" (click)="onNext()">
+            <mat-option *ngFor="let option of filteredList" [value]="option.book_title">
+              {{option.book_title}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <div class="form-group">
+          <label for="edition">Edition</label>
+          <input type="text" class="form-control" id="edition" name="edition" placeholder="Edition"
+            [(ngModel)]="specificInput.edition">
+        </div>
+        <div class="form-group">
+          <label for="volume">Volume</label>
+          <input type="text" class="form-control" id="volume" name="volume" placeholder="Volume"
+            [(ngModel)]="specificInput.volume">
+        </div>
+
+
+        <div class="float-right">
+          <a class="btn btn-secondary main" [routerLink]="['../newbook']" [queryParams]="type">Add New Book</a>&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-secondary main" (click)="onNext()">Next</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

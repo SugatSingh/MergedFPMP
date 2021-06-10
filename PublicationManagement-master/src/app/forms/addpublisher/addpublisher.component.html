@@ -1,0 +1,20 @@
+  <div class="card">
+    <h5 class="card-header main text-center">Select Publisher</h5>
+      <div class="form-group card-body">
+        <form>
+          <mat-form-field class="full-width">
+            <input type="text" placeholder="Publisher name" aria-label="Text" matInput [formControl]="publisherForm"
+              [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredList" [value]="option.publisher_name">
+                {{option.publisher_name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <div class="float-right">
+            <a class="btn btn-secondary main" [routerLink]="['../newpublisher']" [queryParams]="type" >Add New Publisher</a>&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-secondary main" (click)="onNext()">Next</a>
+          </div>
+        </form>
+      </div>
+    </div>

@@ -1,0 +1,21 @@
+<!--/home : This is UI for not logged users to peek through the publication using some filters-->
+<app-header *ngIf="show"></app-header>
+<app-small-nav *ngIf="!show"></app-small-nav>
+<div class="container-fluid">
+  <div class="float-right">
+    <div class="text-center">
+        <button class="btn btn-link" routerLink="/login" style="font-size: 18px; padding-bottom: 45px;">Log In</button>
+        <i class='bx bxs-user-circle primary' style="font-size: 60px; padding-bottom:0%"></i>
+    </div>
+</div>
+</div>
+<div><br><br><br><br><br></div>
+<div class="container" style="width: 80%">
+  <app-search-bar></app-search-bar>
+  <app-advance-search (hideEvent)="setHide(e)" ></app-advance-search>
+  <div class="float-right">
+    <a href="">Search with Journal</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="">Search with Author</a>
+  </div>
+</div>
+

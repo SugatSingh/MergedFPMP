@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <!-- The sidebar -->
+  <div class="sidebar">
+    <div class="main" routerLink="/home">
+      <h3 class="text-center" style="color: #fefefe"><img src="assets/images/tu-logo.png" class="img-fluid"
+          style="height:100px"><br>Faculty Publication Portal</h3>
+      <div><br></div>
+    </div>
+    <a routerLink="/dashboard"><i class="fa fa-home" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Dashoard</strong></a>
+    <a routerLink="/dashboard/conf_article"><i class="bx bx-news" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Conference Article</strong></a>
+    <a routerLink="/dashboard/book"><i class="fa fa-book" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Book</strong></a>
+    <a routerLink="/dashboard/jour_article"><i class="bx bx-note" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Journal Article</strong></a>
+    <a routerLink="/dashboard/proceeding"><i class="bx bx-notepad" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Proceeding</strong></a>
+    <a routerLink="/dashboard/report"><i class="bx bxs-report" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Report</strong></a>
+    <a routerLink="/dashboard/users"><i class="bx bxs-user" style="font-size: 20px;"></i><strong
+        class="primary">&nbsp;&nbsp;Users</strong></a>
+  </div>
+  <div class="row container-fluid">
+    <!-- Page content -->
+    <div class="content">
+      <div class="container" *ngFor="let department of departments">
+        <div class="card mt-10">
+          <div class="card-heading">
+            <a routerLink="department/{{department.department_id}}">
+              <h4>{{department.department_name}}</h4>
+            </a>
+          </div>
+          <div class="card-content">
+            Department Id: {{department.department_id}}
+            <br>
+            Affiliation: {{ department.affiliation }}
+            <br>
+            Website: <a [href]="department.website">{{department.website}}</a>
+            <br>
+            Address: {{department.address}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

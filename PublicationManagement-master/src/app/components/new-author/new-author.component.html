@@ -1,0 +1,14 @@
+<div class="container">
+    <form #authorsform="ngForm">
+        <div class="row">
+          <div class="col-xl-4 form-group">
+            <input type="text" class="form-control" id="authors" name="first_name" placeholder="First Name" required ngModel>
+          </div>
+          <div class="form-group col-xl-4">
+            <input type="text" class="form-control" id="authors" name="last_name" placeholder="Last Name" ngModel>
+          </div>
+        </div>
+        <button class="btn main btn-secondary" (click)="addAuthor(authorsform)">Add Author</button>
+    </form>
+    <button class="btn btn-secondary" (click)="onNext()">Next</button>
+</div>
